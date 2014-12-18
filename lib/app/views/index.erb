@@ -22,8 +22,10 @@
     	<li>
     		<%= idea.title %><br/>
     		<%= idea.description %>
-            <form action='/<%= idea.id %>/like' method='POST' style="display: inline"><br/>
+            <form action='/<%= idea.id %>/dislike' method='POST' style="display: inline"><br/>
                 <input type='submit'value="naughty"/>
+            </form>
+            <form action='/<%= idea.id %>/like' method='POST' style="display: inline">
                 <input type='submit' value="nice"/><br>
             </form>
     		<a href="/<%= idea.id %>/edit">check it twice</a>

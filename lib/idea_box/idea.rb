@@ -27,11 +27,13 @@ class Idea
 
 	def naughty
 		@rank -= 1
-		binding.pry
+		# require "pry"
+		# binding.pry
 	end
 
 	def <=>(other)
 		other.rank <=> rank
+		# require "pry"
 		# binding.pry
 	end
 	# def save

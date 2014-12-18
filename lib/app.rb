@@ -72,7 +72,7 @@ class IdeaBoxApp < Sinatra::Base
 		# "I like this idea!"
 	end
 
-	post '/:id/dislkie' do |id|
+	post '/:id/dislike' do |id|
 		idea = IdeaStore.find(id.to_i)
 		idea.naughty
 		# binding.pry
