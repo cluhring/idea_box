@@ -1,0 +1,54 @@
+
+body {
+  background: url(../images/Christmas-Background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: Georgia, Helvetica, sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul li {
+	position: relative;
+	right: -850px;
+	top: -250px;
+    list-style-position: inside;
+    list-style-image: url(../images/present5.jpg);
+    width: 20%;
+    background-color: #D82306;
+    border: 5px solid;
+    border-color: #F0B942;
+    border-radius: 70px;
+    padding: 30px;
+    margin: 10px;
+   }
+
+ h3 {
+ 	position: relative;
+ 	right: -980px;
+ 	top: -255px;
+ 	font-size: 34;
+ 	text-decoration: underline;
+ }
+
+h1 {
+	position: relative;
+	top: 300px;
+
+}
+
+ .input-form {
+ 	position: relative;
+ 	top: 300px;
+ 	font-size: 30;
+ }
+
+ .imgClass {
+ 	background-image: url(images/letter-to-santa-claus.jpg);
+ 	background-repeat: no-repeat;
+ 	background-color: none;
+ 	width: 187px;
+ 	height: 98px;
+ }

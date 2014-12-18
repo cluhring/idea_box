@@ -1,0 +1,21 @@
+<html>
+	<!-- <embed src="../images/Mariah.mp3" autostart="true" loop="true" width="2" height="0">
+	</embed> -->
+<!-- 	<a href="../images/Mariah.mp3">Play music</a> -->
+	<head>
+		<title>IdeaBox</title>
+		<link href="main.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<nav>
+			<a href="<%= url('/')%>">Home</a>
+			<a href="<%= url('/playground')%>">Playground</a>
+		</nav>
+		<!-- <link rel="stylesheet" href=main.css"> -->
+		<%= yield %>
+		<footer>
+		<p>&copy; <%= Time.now.year %> The Turing School of Software &amp; Design</p>
+		</footer>
+	</body>
+</html>
+

@@ -1,0 +1,40 @@
+<!-- <html>
+  <head>
+    <title>IdeaBox</title>
+  </head> -->
+  <body>
+    <h1>All I Want For Christmas</h1>
+    <div class="input-form">
+        <form action='/' method='POST'>
+        	<p>
+        		Is Not You. <br> Instead, buy me this:
+        	</p>
+        	<input type='text' name='idea[title]' /><br/>
+        	<textarea name='idea[description]'></textarea><br/>
+        	<input type='submit' value="" class="imgClass"/>
+          <!--   <audio src="/images/Mariah.mp3" controls></audio> -->
+        </form>
+    </div>
+    <h3>Wish List</h3>
+
+    <ul>
+    	<% ideas.each do |idea| %>
+    	<li>
+    		<%= idea.title %><br/>
+    		<%= idea.description %>
+            <form action='/<%= idea.id %>/like' method='POST' style="display: inline"><br/>
+                <input type='submit'value="naughty"/>
+                <input type='submit' value="nice"/><br>
+            </form>
+    		<a href="/<%= idea.id %>/edit">check it twice</a>
+    		<form action="/<%= idea.id %>" method="POST">
+    			<input type="hidden" name="_method" value="DELETE">
+    			<input type="submit" value="delete"/>
+    		</form>
+    	</li>
+    	<% end %>
+    </ul>
+  </body>
+<!-- </html> -->
+
+
