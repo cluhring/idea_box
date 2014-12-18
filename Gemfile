@@ -6,4 +6,10 @@ gem 'sinatra-contrib', require: 'sinatra/reloader'
 gem 'shotgun'
 gem 'pry'
 
+group :test do
+  gem 'minitest'
+  gem 'rack-test'
+  gem 'nokogiri'
+end
+
 # gem 'sass'
