@@ -12,7 +12,9 @@
         	<input type='text' name='idea[title]' /><br/>
         	<textarea name='idea[description]'></textarea><br/>
         	<input type='submit' value="" class="imgClass"/>
-          <audio src="/images/Mariah.mp3" controls></audio>
+          <!-- oncli="document.querySelector('audio').play()" -->
+          <audio src="/images/Mariah.mp3" width="2" height="0"></audio>
+          <!-- <button onclick="document.querySelector('audio').play()">Play the things</button> -->
         </form>
     </div>
     <h3>Wish List</h3>
@@ -37,6 +39,9 @@
     	<% end %>
     </ul>
   </body>
+  <% if play == "true" %>
+    <script>
+    document.querySelector('audio').play();
+    </script>
+  <% end %>
 <!-- </html> -->
-
-

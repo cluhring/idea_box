@@ -11,7 +11,7 @@ class IdeaBoxApp < Sinatra::Base
 
 
 	get '/' do
-		erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new(params)}
+		erb :index, locals: {ideas: IdeaStore.all.sort, idea: Idea.new(params), play: params[:play]}
 	end
 
 	get '/playground' do
@@ -39,7 +39,7 @@ class IdeaBoxApp < Sinatra::Base
 		# 2. Store it
 		# idea.save
 		# 3. Send us back to the index page to see all ideas
-		redirect '/'
+		redirect '/?play=true'
 	end
 
 	not_found do
@@ -83,5 +83,3 @@ class IdeaBoxApp < Sinatra::Base
 end
 
 __END__
-
-
