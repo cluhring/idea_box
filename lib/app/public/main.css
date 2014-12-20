@@ -10,6 +10,20 @@ a {
   text-decoration: none;
 }
 
+textarea.span4, .uneditable-input.span4 {
+  width: 256px;
+  height: 50px;
+  font-size: 22;
+  text-align: center;
+}
+
+.span3, .uneditable-input.span3 {
+  width: 256px;
+  height: 50px;
+  font-size: 32;
+  text-align: center;
+}
+
 ul li {
 	position: relative;
 	right: -850px;
