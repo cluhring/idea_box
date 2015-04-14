@@ -5,5 +5,7 @@ gem 'sinatra-contrib', require: 'sinatra/reloader'
 # gem 'sinatra-partial', require: 'sinatra/partial'
 gem 'shotgun'
 gem 'pry'
+gem 'redis'
+gem 'faraday'
 
 # gem 'sass'
