@@ -1,5 +1,9 @@
 require 'idea_box'
 require 'pry'
+require 'redis'
+require 'json'
+
+$redis = Redis.new
 
 class IdeaBoxApp < Sinatra::Base
 	set :method_override, true
@@ -33,9 +37,28 @@ class IdeaBoxApp < Sinatra::Base
 	# end
 
 	post '/' do
+		$redis.publish :community, params[:idea].to_json
+		$redis.subscribe(:community) do |on|
+			on.message do |channel, msg|
+		message = JSON.parse(msg)
+
+		data = {
+			username: message['title'],
+			icon_url: "http://robohash.org/#{message['title']}.png",
+			text: message['description']
+		}
+
+		conn.post do |req|
+			req.url "/services/#{ENV['SLACKER_WEBHOOK']}"
+			req.headers['Content-Type'] = 'application/json'
+			req.body = data.to_json
+		end
+	end
+end
 		# params.inspect
 		# 1. Create an idea based on the form parameters
 		idea = IdeaStore.create(params[:idea])
+
 		# 2. Store it
 		# idea.save
 		# 3. Send us back to the index page to see all ideas
@@ -83,5 +106,3 @@ class IdeaBoxApp < Sinatra::Base
 end
 
 __END__
-
-
